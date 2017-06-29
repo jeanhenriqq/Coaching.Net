@@ -10,35 +10,22 @@ namespace Exercicio_1
     {
         static void Main(string[] args)
         {
-            double aplicacao = 0;
-            double rendimentoMensal = 0;
-            double retorno = 0;
-            int mesesAplicacao = 0, tipoJuros;
-
+            Investimento investimento = new Investimento();
+            
             Console.Write("Valor a ser aplicado: ");
-            aplicacao = double.Parse(Console.ReadLine());
-            Console.Write("\nRendimento mensal da poupança em %: ");
-            rendimentoMensal = double.Parse(Console.ReadLine());
+            investimento.ValorAplicacao = double.Parse(Console.ReadLine());
+            Console.Write("\nTaxa de juros: ");
+            investimento.JurosMes = double.Parse(Console.ReadLine());
             Console.Write("\nMeses de aplicação: ");
-            mesesAplicacao = int.Parse(Console.ReadLine());
-            Console.Write("\nTipo de juros: \n1 - Simples. \n2 - Composto");
-            tipoJuros = int.Parse(Console.ReadLine());
+            investimento.QuantidadeMeses = int.Parse(Console.ReadLine());
 
-            rendimentoMensal = rendimentoMensal / 100;
+            Console.WriteLine(" \n");
+            Console.WriteLine("-------------------------------");
 
-            switch (tipoJuros)
-            {
-                case 1://Juros Simples
-                    retorno = ((aplicacao * rendimentoMensal) * mesesAplicacao) + aplicacao;
-                    Console.Write("Ao final do investimento, vcê terá {0}", retorno);
-                    break;
-
-                case 2://Juros Compostos
-                    retorno = 
-                    Console.WriteLine("Case 2");
-                    break;
-            }
-
-            }
+            Console.WriteLine("O retorno do seu investimento total será: {0}", investimento.RendimentoMensal);
+            Console.WriteLine(" \n");          
+            
+            Console.ReadKey();
+        }
     }
 }
